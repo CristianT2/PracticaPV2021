@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Ultimo Producto</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.6.0/css/bootstrap.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/estilos.css}" href="../static/css/estilos.css">
+</head>
+<body>
+	<div class="container">
+			<div th:replace="layout/header :: header"></div>
+			<section class="row m-0 p-0">
+				<div class="col-md-9 mt-5 mb-5">
+					<div class="col-md-9">
+						<h2>Detalles del Producto:</h2>
+						<br>
+						<table class="table table-bordered">
+							  <thead class="bg-primary mb-3">
+							    <tr>
+							      <th scope="col">Nombre</th>
+							      <th scope="col">Marca</th>
+							      <th scope="col">Precio</th>
+							      <th scope="col">Codigo</th>
+							      <th scope="col">Stock</th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr>
+							      <td><span th:text="${producto.nombre}"></span></td>
+							      <td><span th:text="${producto.marca}"></span></td>
+							      <td><span th:text="${producto.precio}"></span></td>
+							      <td><span th:text="${producto.codigo}"></span></td>
+							      <td><span th:text="${producto.stock}"></span></td>
+							    </tr>
+							  </tbody>
+						</table>
+					
+						<a href="/producto">Registrar un producto</a>
+					</div>
+				</div>
+				<div th:replace="/layout/aside :: aside"></div>
+			</section>
+			<div th:replace="/layout/footer :: footer"></div>
+		</div>
+
+	
+	
+	
+	
+	<script type="text/javascript" th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/popper.js/1.16.1/dist/popper.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/4.6.0/js/bootstrap.min.js}"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Alerta</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.6.0/css/bootstrap.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/estilos.css}" href="../static/css/estilos.css">
+</head>
+<body>
+	<div class="container">
+		<div th:replace="/layout/header :: header"></div>
+		<section class="row m-0 p-0">
+			<div class="col-md-9 mt-5 mb-5">
+				<div class="alert alert-success" role="alert">
+				  <h4 class="alert-heading">Registro Existoso </h4>
+				  <p>El producto fue registrado correctamente.</p>
+				  <hr>
+				  <p class="mb-0"><a href="/producto/ultimo">(Ver ultimo producto registrado)</a></p>
+				</div>
+			</div>
+		</section>
+		<div th:replace="/layout/footer :: footer"></div>
+	</div>
+	
+	
+	
+	<script type="text/javascript" th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/popper.js/1.16.1/dist/popper.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/4.6.0/js/bootstrap.min.js}"></script>
+</body>
+</html>

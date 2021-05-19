@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Registro</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.6.0/css/bootstrap.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/estilos.css}" href="../static/css/estilos.css">
+</head>
+<body>
+	<div class="container">
+		<div th:replace="layout/header :: header"></div>
+		<section class="row m-0 p-0 ">
+			<div class="card text-center col-md-9 mt-5 mb-5">
+			  <div class="card-header bg-primary ml-0 mr-0">
+			    <h2>Registro de Clientes</h2>
+			  </div>
+			  <div class="card-body bg-light" >
+			    <form th:action="@{/cliente/guardar}" th:object="${cliente}" method="post" >
+				  <div class="form-group row">
+				    <label for="nombreapellido" class="col-sm-2 col-form-label">Nombre y Apellido</label>
+				    <div class="col-sm-10">
+				      <input type="text" class="form-control" th:field="*{nombreApellido}" id="nombreapellido" placeholder="Ingrese su nombre y apellido" title="Ingrese nombre y apellido">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="tipodni" class="col-sm-2 col-form-label">Tipo de Documento:</label>
+				    <div class="col-sm-10">
+				      <select class="form-control" name="tipodni" id="tipodni" th:field="*{tipoDocumento}">
+				      	<option selected value="">Seleccione una opción</option>
+						<option value="dni">DNI</option>
+						<option value="pasaporte">Pasaporte</option>
+					  </select>
+				    </div>
+				  </div>
+				   <div class="form-group row">
+				    <label for="dni" class="col-sm-2 col-form-label">Número de Documento:</label>
+				    <div class="col-sm-10">
+				      <input type="number" class="form-control" id="dni" title="Ingrese su Numero de Documento" th:field="*{nroDocumento}">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="email" class="col-sm-2 col-form-label">Email:</label>
+				    <div class="col-sm-10">
+				      <input type="email" class="form-control" id="email" title="Ingrese su Email" th:field="*{email}" placeholder="Ingrese su Email">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="password" class="col-sm-2 col-form-label">Contraseña:</label>
+				    <div class="col-sm-10">
+				      <input type="password" class="form-control" id="password" title="Ingrese Contraseña" th:field="*{password}">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="fechanac" class="col-sm-2 col-form-label">Fecha de Nacimiento:</label>
+				    <div class="col-sm-10">
+				      <input type="date" class="form-control" id="fechanac" th:field="*{fechaNacimiento}">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="codarea" class="col-sm-2 col-form-label">Codigo de Area:</label>
+				    <div class="col-sm-10">
+				      <input type="number" class="form-control" id="codarea" title="Ingrese Codigo de Area" th:field="*{codigoAreaTelefono}">
+				    </div>
+				  </div>
+				   <div class="form-group row">
+				    <label for="numtelefono" class="col-sm-2 col-form-label">Numero de Telefono:</label>
+				    <div class="col-sm-10">
+				      <input type="number" class="form-control" id="numtelefono" title="Ingrese su Numero de Telefono" th:field="*{nroTelefono}">
+				    </div>
+				  </div>
+				  <div class="form-group row">
+				    <label for="fechauc" class="col-sm-2 col-form-label">Fecha de Ultima Compra:</label>
+				    <div class="col-sm-10">
+				      <input type="date" class="form-control" id="fechauc" th:field="*{fechaUltimaCompra}">>
+				    </div>
+				  </div>
+				  <div class="card-footer text-muted">
+				    <input type="submit" class="btn btn-primary" value="Registrar cliente">
+				  </div>
+				</form>
+			  </div>
+			</div>
+			<div th:replace="/layout/aside :: aside"></div>
+		</section>
+		<div th:replace="/layout/footer :: footer"></div>
+	</div>
+	
+	
+	<script type="text/javascript" th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/popper.js/1.16.1/dist/popper.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/4.6.0/js/bootstrap.min.js}"></script>
+</body>
+</html>

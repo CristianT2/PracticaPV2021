@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<header th:fragment="header">
+		<div class="jumbotron jumbotron-fluid bg-info mt-0 mb-1">
+		  <div class="container">
+		    <h1 class="display-4 text-center">Universidad Nacional de Jujuy</h1>
+		  </div>
+		</div>
+		<nav class="navbar navbar-expand-lg navbar-light bg-info mt-0 mb-2">
+		  <a class="navbar-brand" href="/home"><img class="img-fluid" alt="" th:src="@{'/images/logo.png'}" src="../static/images/logo.png"></a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+		    <ul class="navbar-nav">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+		      </li>
+		      <li class="nav-item active dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Clientes
+		        </a>
+		        <div class="dropdown-menu bg-info" aria-labelledby="navbarDropdownMenuLink">
+		          <a class="dropdown-item" href="/cliente/nuevo">Registrar Cliente</a>
+		          <a class="dropdown-item" href="/cliente/listado">Lista de Clientes registrados</a>
+		        </div>
+		      </li>
+		      <li class="nav-item active dropdown">
+		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		          Productos
+		        </a>
+		        <div class="dropdown-menu bg-info" aria-labelledby="navbarDropdownMenuLink">
+		          <a class="dropdown-item" href="/producto">Registrar Producto</a>
+		          <a class="dropdown-item" href="/producto/ultimo">Ultimo producto Registrado</a>
+		        </div>
+		      </li>
+		    </ul>
+		  </div>
+		</nav>
+	</header>
+
+</body>
+</html>

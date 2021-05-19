@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Bienvenido</title>
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.6.0/css/bootstrap.min.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/css/estilos.css}" href="../static/css/estilos.css">
+</head>
+	<body>
+		<div class="container">
+			<div th:replace="layout/header :: header"></div>
+			<section class="row m-0 p-0">
+				<div class="col-md-9">
+					<span class="d-block p-4 bg-primary mt-4 text-white display-4">Bienvenidos</span>
+					<span class="d-block p-2 bg-dark text-white">Paginas disponibles</span>
+					<div class="card-deck mt-5 mb-5 ">
+					  <div class="card bg-secondary text-white p-4">
+					    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-people-fill p-3 mb-2 bg-info text-white m-auto rounded-circle" viewBox="0 0 16 16">
+						  <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+						  <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+						  <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+						</svg>
+					    <div class="card-body mt-4">
+					      <h5 class="card-title">Clientes</h5>
+					      <p class="card-text">Esta seccion permite registrar un cliente y visualizar la lista de los clientes registrados.</p>
+					    </div>
+					  </div>
+					  <div class="card bg-secondary text-white p-4">
+					    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-collection-fill p-3 mb-2 bg-info text-white m-auto rounded-circle" viewBox="0 0 16 16">
+						  <path d="M0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zM2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1z"/>
+						</svg>
+					    <div class="card-body mt-4">
+					      <h5 class="card-title">Productos</h5>
+					      <p class="card-text">Esta seccion permite registrar un producto y visualizar el ultimo producto registrado.</p>
+					      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+					    </div>
+					  </div>
+					</div>
+				</div>
+				<div th:replace="layout/aside :: aside"></div>
+			</section>
+			<div th:replace="layout/footer :: footer"></div>
+		</div>
+	
+	
+		<script type="text/javascript" th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+		<script type="text/javascript" th:src="@{/webjars/popper.js/1.16.1/dist/popper.min.js}"></script>
+		<script type="text/javascript" th:src="@{/webjars/bootstrap/4.6.0/js/bootstrap.min.js}"></script>	
+	</body>
+</html>

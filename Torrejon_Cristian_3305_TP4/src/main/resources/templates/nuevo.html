@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Registro</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.6.0/css/bootstrap.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/estilos.css}" href="../static/css/estilos.css">
+</head>
+<body>
+	<div class="container">
+		<div th:replace="/layout/header :: header"></div>
+		<section class="row m-0 p-0">
+			<div class="col-md-9 mt-5 mb-5">
+				<div class="card text-center">
+				  <div class="card-header bg-warning mb-3">
+				    <h2>Registro de productos</h2>
+				  </div>
+				  <div class="card-body">
+					<form th:action="@{/producto/registrar}" th:object="${producto}" method="post">
+						<div class="form-group row">
+							<label for="codigo" class="col-sm-2 col-form-label">Codigo</label>
+							<div class="col-sm-10">
+								<input type="number" class="form-control" id="codigo" th:field="*{codigo}"/>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+							<div class="col-sm-10">
+								<input type="text" class ="form-control" id="nombre" th:field="*{nombre}" placeholder="Ingrese nombre">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="precio" class="col-sm-2 col-form-label">Precio</label>
+							<div class="col-sm-10">
+								<input type="text" class ="form-control" id="precio" th:field="*{precio}">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="marca" class="col-sm-2 col-form-label">Marca</label>
+							<div class="col-sm-10">
+								<input type="text" class ="form-control" id="marca" th:field="*{marca}" placeholder="Ingrese marca">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="stock" class="col-sm-2 col-form-label">Stock</label>
+							<div class="col-sm-10">
+								<input type="text" class ="form-control" id="stock" th:field="*{stock}">
+							</div>
+						</div>
+						 <div class="card-footer text-muted bg-warning mb-3">
+						    <input type="submit" class="btn btn-primary" value="Registrar Producto">
+						  </div>
+						</form>
+					  </div>
+					  
+					</div>
+			</div>
+			<div th:replace="/layout/aside :: aside"></div>
+		</section>
+		<div th:replace="/layout/footer :: footer"></div>
+	</div>
+	
+	
+	
+	<script type="text/javascript" th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/popper.js/1.16.1/dist/popper.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/4.6.0/js/bootstrap.min.js}"></script>
+
+
+</body>
+</html>

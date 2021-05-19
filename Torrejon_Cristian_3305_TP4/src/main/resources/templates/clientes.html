@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Lista de Clientes</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.6.0/css/bootstrap.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/estilos.css}" href="../static/css/estilos.css">
+</head>
+<body>
+	<div class="container">
+		<div th:replace="/layout/header :: header"></div>
+		<section class="row m-0 p-0">
+			<div class="col-md-9 mt-5 mb-5">
+				<div class="alert alert-success" role="alert">
+		  		Registro Exitoso. <a href="/cliente/nuevo" class="alert-link">Click aqui</a>. Para registrar un nuevo cliente.
+				</div>
+				<div class="card">
+				  <div class="card-header text-center bg-success mb-3">
+				    <h2>Clientes Registrados</h2>
+				  </div>
+				  <div class="card-body">
+				     	<table class="table table-striped table-responsive table-bordered">
+						  <thead class=" bg-secondary">
+						    <tr>
+						      <th scope="col">Tipo de Documento</th>
+						      <th scope="col">N° de Documento</th>
+						      <th scope="col">Apellido y Nombre</th>
+						      <th scope="col">Email</th>
+						      <th scope="col">Fecha de Nacimiento</th>
+						      <th scope="col">Edad</th>
+						      <th scope="col">N° de Teléfono</th>
+						      <th scope="col">Fecha de Ultima Compra</th>
+						      <th scope="col">Tiempo transcurrido desde la ultima compra</th>
+						      <th scope="col">Tiempo transcurrido desde que nacio</th>
+						      <th scope="col">Tiempo que falta para el proximo cumpleaños</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr th:each="cli : ${clientes}">
+						     	<td th:text="${cli.tipoDocumento.toUpperCase()}"></td>
+								<td th:text="${cli.nroDocumento}"></td>
+								<td th:text="${cli.nombreApellido.toUpperCase()}"></td>
+								<td th:text="${cli.email}"></td>
+								<td th:text="${#temporals.format( cli.fechaNacimiento, 'dd-MM-yyyy')}"></td>
+								<td th:text="${cli.obtenerEdad}"></td>
+								<td th:text="${cli.codigoAreaTelefono} +'-' + ${cli.nroTelefono}"></td>
+								<td th:text="${#temporals.format(cli.fechaUltimaCompra, 'dd-MM-yyyy')}"></td>
+								<td th:text="${cli.getTiempoDesdeUltCompra}"></td>
+								<td th:text="${cli.getDiasDesdeNacimiento}"></td>
+								<td th:text="${cli.getTiempoProximoCumple}"></td>
+						    </tr>
+						  </tbody>
+						</table>
+				  </div>
+				</div>
+			</div>
+			<div th:replace="/layout/aside :: aside"></div>
+		</section>
+		<div th:replace="/layout/footer :: footer"></div>
+	</div>
+	<script type="text/javascript" th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/popper.js/1.16.1/dist/popper.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/4.6.0/js/bootstrap.min.js}"></script>
+</body>
+</html>
